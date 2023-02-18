@@ -1,0 +1,173 @@
+/*margin e padding 0 são propriedades para
+configuradas para o reset CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+:root {
+    /*variaveis globais*/
+    --cor-primaria: #222831;
+    --cor-secundaria: #EEEEEE;
+    --cor-terciaria: #00ADB5;
+    --cor-hover: #393E46;
+
+    --font-primaria: 'Krona One', sans-serif;
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;
+*/
+}
+
+
+body {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    /*height: 100vh;
+    altura da tela = 100% altura do viewport (altura máxima da tela do dispositivo)*/
+    box-sizing: border-box;
+    /*mantem o elemento filho dentro do elemento pai*/
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 50px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-secundaria);
+}
+
+.apresentacao {
+    display: flex;
+    /*aplica na tag main com classe "apresentacao"
+    por padrão o Flexbox coloca os elementos em linha
+    */
+    align-items: center;
+    /*alinha os itens*/
+    justify-content: center;
+    /*dá um espaçamento ENTRE os elementos filhos*/
+    padding: 5% 15%;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /*por padrão o flex posiciona os elementos em linha, usando column é possível posicionar na vertical*/
+    gap: 40px;
+    /*diz o espaçamento entre cada elemento filho*/
+    margin-right: 5%;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    /*rem acompanha a unidade de medida do navegador - 16px = 1rem*/
+    font-family: var(--font-primaria);
+    text-align: justify;
+
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+    text-align: justify;
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--font-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__navegacao {
+    width: 60%;
+    text-align: center;
+    color: var(--cor-secundaria);
+    border-radius: 8px;
+    border: solid 2px var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+    /*foi importado junto no início do arquivo*/
+    text-decoration: none;
+    padding: 21.5px 0;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+}
+
+.apresentacao__links__navegacao:hover {
+    color: #FCE38A;
+    background-color: var(--cor-hover);
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-hover);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+    font-weight: 400;
+}
+
+/*responsividade - ajusta o layout para telas menores*/
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+    .apresentacao__links__navegacao{
+        width: 80%;
+    }
+    .rodape{
+        margin-top: 10%;
+    }
+
+}
